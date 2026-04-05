@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>2473035-Albert Zidane Meidi</title>
+
+    <style>
+        body {
+            background: #dddddd;
+        }
+
+        .box {
+            width: 500px;
+            height: 250px;
+            position: relative;
+            margin: 100px auto;
+            padding: 25px;
+        }
+
+        .box img {
+            width: 150px;
+            position: absolute;
+            top: 25px;
+        }
+
+        .tengah {
+            left: 160px;
+            z-index: 2;
+        }
+
+        .kiri {
+            left: 70px;
+            z-index: 1;
+        }
+
+        .kanan {
+            left: 250px;
+            z-index: 1;
+        }
+
+        .potongKiri {
+            left: 70px;
+            z-index: 3;
+        }
+
+        .potongKanan {
+            left: 250px;
+            z-index: 3;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">
+
+        <img src="src/circle-purple.png" class="tengah">
+
+        <img src="src/circle-red.png" class="kiri">
+
+        <img src="src/circle-red.png" class="kanan">
+
+        <img src="src/circle-red-half.png" class="potongKiri">
+
+        <img src="src/circle-red-half.png" class="potongKanan">
+
+    </div>
+
+</body>
+
+</html>
