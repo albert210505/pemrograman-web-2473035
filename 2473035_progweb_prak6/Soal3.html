@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2473035-Albert Zidane Meidi</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        td {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ccc;
+        }
+
+        .block {
+            background: orange;
+        }
+    </style>
+
+    <script>
+        function buatPiramida() {
+
+            var tinggi = document.getElementById("tinggi").value;
+
+            if (isNaN(tinggi) || tinggi == "") {
+                alert("tinggi harus angka");
+                return;
+            }
+
+            tinggi = parseInt(tinggi);
+
+            var hasil = "<table width='800' height='600'>";
+
+            for (var i = 1; i <= tinggi; i++) {
+                hasil += "<tr>";
+
+                for (var j = 1; j <= tinggi - i; j++) {
+                    hasil += "<td></td>";
+                }
+
+                for (var k = 1; k <= (2 * i - 1); k++) {
+                    hasil += "<td class='block'></td>";
+                }
+
+                for (var j = 1; j <= tinggi - i; j++) {
+                    hasil += "<td></td>";
+                }
+
+                hasil += "</tr>";
+            }
+
+            hasil += "</table>";
+
+            document.getElementById("output").innerHTML = hasil;
+        }
+    </script>
+
+</head>
+
+<body>
+
+    Tinggi Piramida :
+    <input type="text" id="tinggi">
+    <button onclick="buatPiramida()">Proses</button>
+
+    <div id="output"></div>
+
+</body>
+
+</html>
