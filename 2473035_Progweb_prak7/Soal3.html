@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2473035-Albert Zidane Meidi</title>
+
+    <script>
+        var dataArr = [];
+
+        function tambah() {
+            var nilai = document.getElementById("inputData").value;
+
+            if (nilai !== "") {
+                dataArr.push(parseInt(nilai));
+                document.getElementById("inputData").value = "";
+            }
+        }
+
+        function prosesData() {
+            var pilihan = document.getElementById("opsi").value;
+            var output = "";
+
+            if (pilihan == "display") {
+                output = dataArr.join(", ");
+            }
+
+            else if (pilihan == "count") {
+                output = dataArr.length;
+            }
+
+            else if (pilihan == "sum") {
+                var total = 0;
+                for (var i = 0; i < dataArr.length; i++) {
+                    total += dataArr[i];
+                }
+                output = total;
+            }
+
+            else if (pilihan == "average") {
+                var total = 0;
+                for (var i = 0; i < dataArr.length; i++) {
+                    total += dataArr[i];
+                }
+                output = total / dataArr.length;
+            }
+
+            else if (pilihan == "max") {
+                var terbesar = dataArr[0];
+                for (var i = 0; i < dataArr.length; i++) {
+                    if (dataArr[i] > terbesar) {
+                        terbesar = dataArr[i];
+                    }
+                }
+                output = terbesar;
+            }
+
+            else if (pilihan == "min") {
+                var terkecil = dataArr[0];
+                for (var i = 0; i < dataArr.length; i++) {
+                    if (dataArr[i] < terkecil) {
+                        terkecil = dataArr[i];
+                    }
+                }
+                output = terkecil;
+            }
+
+            else if (pilihan == "ganjil") {
+                var hasil = [];
+                for (var i = 0; i < dataArr.length; i++) {
+                    if (dataArr[i] % 2 != 0) {
+                        hasil.push(dataArr[i]);
+                    }
+                }
+                output = hasil.join(", ");
+            }
+
+            else if (pilihan == "genap") {
+                var hasil = [];
+                for (var i = 0; i < dataArr.length; i++) {
+                    if (dataArr[i] % 2 == 0) {
+                        hasil.push(dataArr[i]);
+                    }
+                }
+                output = hasil.join(", ");
+            }
+
+            else if (pilihan == "hapus") {
+                dataArr = [];
+                output = "";
+            }
+
+            document.getElementById("hasil").value = output;
+        }
+    </script>
+
+    <style>
+        .judul {
+            font-size: 22px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td class="judul">Data</td>
+            <td><input type="text" id="inputData"></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="tambah()">Add</button>
+
+                <select id="opsi" onchange="prosesData()">
+                    <option value="">Pilih</option>
+                    <option value="display">Display</option>
+                    <option value="count">Count</option>
+                    <option value="sum">Sum</option>
+                    <option value="average">Average</option>
+                    <option value="max">Max</option>
+                    <option value="min">Min</option>
+                    <option value="ganjil">Ganjil</option>
+                    <option value="genap">Genap</option>
+                    <option value="hapus">Hapus</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="judul">Hasil</td>
+            <td><input type="text" id="hasil" readonly></td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

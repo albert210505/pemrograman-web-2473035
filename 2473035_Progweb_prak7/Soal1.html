@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2473035-Albert Zidane Meidi</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        td {
+            padding: 6px;
+        }
+
+        textarea {
+            width: 170px;
+            height: 100px;
+        }
+
+        .kanan {
+            text-align: right;
+        }
+
+        #counter {
+            width: 60px;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function hitungKarakter(obj) {
+            var teks = obj.value;
+
+            document.getElementById("counter").value = teks.length + "/256";
+
+            if (teks.length > 256) {
+                obj.value = teks.substring(0, 256);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Judul</td>
+            <td>: <input type="text"></td>
+        </tr>
+
+        <tr>
+            <td>Deskripsi</td>
+            <td>:
+                <textarea onkeyup="hitungKarakter(this)" onkeydown="hitungKarakter(this)"></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td class="kanan">
+                <input type="text" id="counter" value="0/256" readonly>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
