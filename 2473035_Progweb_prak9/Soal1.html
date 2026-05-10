@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2473035_Albert Zidane Meidi</title>
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("li.menu ol").hide();
+            $("li.menu").hover(
+                function () {
+                    $("li.menu ol").hide();
+                    $(this).children("ol").show();
+                },
+                function () {
+                    $(this).children("ol").hide();
+                }
+            );
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        #kotakMenu {
+            width: 420px;
+            background-color: #eeeeee;
+            padding: 10px;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        li.menu {
+            width: 110px;
+            background-color: hotpink;
+            color: white;
+            float: left;
+            margin-right: 10px;
+            padding: 5px;
+            position: relative;
+            cursor: pointer;
+        }
+        li.menu ol {
+            position: absolute;
+            top: 28px;
+            left: 0;
+            width: 120px;
+            background-color: white;
+            border: 2px solid hotpink;
+            padding: 5px;
+        }
+        li.menu ol li {
+            list-style: none;
+            color: black;
+            margin-top: 3px;
+        }
+        a{
+            color: black;
+            text-decoration: underline;
+        }
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div id="kotakMenu">
+        <ul>
+            <li class="menu">
+                jQuery
+                <ol>
+                    <li><a href="#">Download</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ol>
+            </li>
+            <li class="menu">
+                Community
+                <ol>
+                    <li><a href="#">Mailing List</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">Demos</a></li>
+                    <li><a href="#">Plugins</a></li>
+                </ol>
+            </li>
+
+            <li class="menu">
+                Development
+                <ol>
+                    <li><a href="#">Source Code</a></li>
+                    <li><a href="#">Bug Tracking</a></li>
+                    <li><a href="#">Recent Changes</a></li>
+                </ol>
+            </li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</body>
+</html>

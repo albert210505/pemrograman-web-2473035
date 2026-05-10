@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2473035_Albert Zidane Meidi</title>
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".kotak").click(function () {
+                $(this).addClass("merah");
+            });
+            $("#btnWarna").click(function () {
+                $(".kotak").each(function (index, element) {
+                    if ($(element).hasClass("merah")) {
+                        return false;
+                    }
+                    $(element).addClass("kuning");
+                });
+            });
+        });
+    </script>
+    <style>
+        .kotak {
+            width: 40px;
+            height: 40px;
+            border: 2px solid blue;
+            float: left;
+            margin: 5px;
+        }
+        .merah {
+            background-color: red;
+        }
+        .kuning {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btnWarna">Change colors</button>
+    <br><br>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+    <div class="kotak"></div>
+</body>
+
+</html>

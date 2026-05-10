@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>2473035_Albert Zidane Meidi</title>
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#txtCari").keyup(function () {
+                var kata = $(this).val().toLowerCase();
+                $("li").css("color", "black");
+                if (kata != "") {
+                    $("li").each(function () {
+                        var perusahaan = $(this).text().toLowerCase();
+                        if (perusahaan.indexOf(kata) != -1) {
+                            $(this).css("color", "red");
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        #box {
+            width: 350px;
+            background-color: #eeeeee;
+            padding: 15px;
+            border: 1px solid black;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <input type="text" id="txtCari">
+        <ul>
+            <li>Sun Microsystems</li>
+            <li>Apache Software Foundation</li>
+            <li>Oracle Corporation</li>
+            <li>International Business Machines</li>
+            <li>Microsoft Corporation</li>
+            <li>Apple Inc</li>
+            <li>SAP AG</li>
+            <li>Accenture</li>
+            <li>Computer Sciences Corporation</li>
+            <li>Google</li>
+            <li>Softbank</li>
+            <li>Yahoo</li>
+        </ul>
+    </div>
+</body>
+</html>

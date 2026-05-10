@@ -1,0 +1,199 @@
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kontrak Beban Studi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        h1 {
+            margin-bottom: 5px;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 6px;
+        }
+
+        th {
+            background-color: gray;
+            color: white;
+            text-align: center;
+        }
+
+        .green {
+            background-color: #7ed37e;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .note {
+            margin-top: 15px;
+            font-size: 12px;
+        }
+
+        img {
+            width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Dokumen Kontrak Beban Studi</h1>
+
+        <div class="top">
+            <div>
+                Program Studi : S-1 Sistem Informasi (73)<br>
+                Proyek Pendidikan : Reguler Ganjil 2022
+            </div>
+
+            <div>
+                Nama : John Doe<br>
+                NRP : 2173099
+            </div>
+        </div>
+
+        <table>
+            <tr>
+                <th>Alokasi Waktu</th>
+                <th>Kode</th>
+                <th>Nama</th>
+                <th>Kls</th>
+                <th>SKS</th>
+                <th>UTS</th>
+                <th>UAS</th>
+                <th>Foto</th>
+            </tr>
+
+            <tr>
+                <td>Senin (09.30-12.00)</td>
+                <td>BIA05</td>
+                <td>E-Business Fundamental Manajemen E-Commerce</td>
+                <td class="center">B</td>
+                <td class="center">3</td>
+                <td></td>
+                <td></td>
+
+                <!-- FOTO -->
+                <td rowspan="6" class="center">
+                    <img src="https://via.placeholder.com/80"><br>
+                    Foto
+                </td>
+            </tr>
+
+            <tr class="green">
+                <td>Senin (12.30-15.00)</td>
+                <td>BIA01</td>
+                <td>Sistem Informasi</td>
+                <td class="center">B</td>
+                <td class="center">3</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>Rabu (09.30-12.00)</td>
+                <td>BIA04</td>
+                <td>Pengenalan Enterprise Architecture</td>
+                <td class="center">B</td>
+                <td class="center">3</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr class="green">
+                <td>Kamis (07.00-09.30)</td>
+                <td>BIA02</td>
+                <td>Pemrograman Dasar</td>
+                <td class="center">B</td>
+                <td class="center">4</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>Kamis (09.30-11.30)</td>
+                <td>BIA11</td>
+                <td>Bahasa Indonesia dan Teknik Pelaporan</td>
+                <td class="center">B</td>
+                <td class="center">2</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr class="green">
+                <td>Jumat (07.00-09.30)</td>
+                <td>BIA03</td>
+                <td>Statistika Deskriptif dan Probabilitas</td>
+                <td class="center">B</td>
+                <td class="center">3</td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td colspan="4" class="right"><b>Total Beban Studi</b></td>
+                <td class="center">18</td>
+                <td colspan="3">IPK : 0</td>
+            </tr>
+        </table>
+
+        <div class="footer">
+            <div class="center">
+                Menyetujui,<br>
+                Mahasiswa<br><br><br>
+                John Doe
+            </div>
+
+            <div class="center">
+                Bandung, 28 Oktober 2024<br>
+                Dosen Wali<br><br><br>
+                Sendy Ferdian Sujadi, S.Kom., M.T.
+            </div>
+        </div>
+
+        <div class="note">
+            <b>Catatan:</b> Kontrak Pengambilan beban studi merupakan suatu kesatuan yang tidak dapat dipisahkan.
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+```

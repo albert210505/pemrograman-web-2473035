@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>2473035_Albert Zidane Meidi</title>
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnAdd").click(function () {
+                var nama = $("#txtNama").val();
+                $("#daftarNama").append(
+                    "<div class='nama'>" + nama + "</div>"
+                );
+            });
+            $("#btnSearch").click(function () {
+                $(".nama").removeClass("garis");
+                var cari = $("#txtNama").val();
+                $(".nama:contains('" + cari + "')").addClass("garis");
+            });
+        });
+    </script>
+    <style>
+        #kotak {
+            width: 300px;
+            background-color: #eeeeee;
+            padding: 10px;
+        }
+
+        .nama {
+            margin-top: 5px;
+        }
+
+        .garis {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="kotak">
+        <input type="text" id="txtNama">
+        <button id="btnAdd">Add</button>
+        <button id="btnSearch">Search</button>
+        <div id="daftarNama">
+            <div class="nama">John Resig</div>
+            <div class="nama">George Martin</div>
+            <div class="nama">Malcom John Sinclair</div>
+            <div class="nama">J. Ohn</div>
+        </div>
+    </div>
+</body>
+</html>
