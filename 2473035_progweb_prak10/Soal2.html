@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2473035-Albert Zidane Meidi</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script>
+        function loadJSON() {
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var obj = JSON.parse(this.responseText);
+                    var isi = "<table>";
+
+                    isi += "<tr><td>";
+                    isi += "<h1><a href='" + obj.link + "'>" + obj.title + "</a></h1>";
+                    isi += "</td></tr>";
+
+                    isi += "<tr><td>";
+
+                    for (var i = 0; i < obj.items.length; i++) {
+                        isi += "<a href='" + obj.items[i].link + "'>" + obj.items[i].title + "</a><br>";
+                        isi += "By : " + obj.items[i].author + " / <i>" + obj.items[i].published + "</i><br><br>";
+                        isi += obj.items[i].description + "<br><br>";
+                        isi += "Universitas : <a href='" + obj.items[i].universitas.link + "'>Click Here</a><br>";
+                        isi += "Tag(s) : " + obj.items[i].tags + "<br><br>";
+                    }
+
+                    isi += "</td></tr>";
+
+                    isi += "<tr><td>";
+                    isi += "©" + obj.generator;
+                    isi += "</td></tr>";
+
+                    isi += "</table>";
+
+                    document.getElementById("hasil").innerHTML = isi;
+                }
+            };
+
+            xhttp.open("GET", "SIJson.txt", true);
+            xhttp.send();
+        }
+    </script>
+
+    <style>
+        table {
+            width: 650px;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: blue;
+            text-decoration: underline;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td>Title</td>
+        </tr>
+        <tr>
+            <td>Content</td>
+        </tr>
+        <tr>
+            <td>Generator</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <button onclick="loadJSON()">Look</button>
+
+    <br><br>
+
+    <div id="hasil"></div>
+
+</body>
+
+</html>

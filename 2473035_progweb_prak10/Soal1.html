@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2473035-Albert Zidane Meidi</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#search").click(function () {
+                var kelas = $("input[name='kelas']:checked").val();
+                var file = "";
+
+                if (kelas == "all") {
+                    file = "nilai.js";
+                } else if (kelas == "A") {
+                    file = "nilaiA.js";
+                } else if (kelas == "B") {
+                    file = "nilaiB.js";
+                }
+
+                $.getJSON(file, function (data) {
+                    $("#hasil tr:not(:first)").remove();
+
+                    $.each(data.nilai, function (i, item) {
+                        var baris = "<tr>" +
+                            "<td>" + item.nrp + "</td>" +
+                            "<td>" + item.nama + "</td>" +
+                            "<td>" + item.kelas + "</td>" +
+                            "<td>" + item.nilaiakhir + "</td>" +
+                            "</tr>";
+
+                        $("#hasil").append(baris);
+                    });
+
+                    $("#hasil tr:gt(0):even").css("background-color", "#CCFFAA");
+                    $("#hasil tr:gt(0):odd").css("background-color", "#FFFFCC");
+                });
+            });
+        });
+    </script>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th {
+            background: black;
+            color: white;
+            padding: 8px;
+        }
+
+        td {
+            padding: 8px;
+        }
+
+        fieldset {
+            width: 220px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Selamat! Berikut adalah Daftar Mahasiswa yang mendapat Nilai A Pemrograman Web SI Tahun Ajaran 2023/2024</h3>
+
+    <fieldset>
+        <input type="radio" name="kelas" value="all"> All <br>
+        <input type="radio" name="kelas" value="A"> Kelas A <br>
+        <input type="radio" name="kelas" value="B"> Kelas B <br><br>
+
+        <button id="search">Search</button>
+    </fieldset>
+
+    <table border="1" id="hasil">
+        <tr>
+            <th>NRP</th>
+            <th>NAMA</th>
+            <th>KELAS</th>
+            <th>NILAI AKHIR</th>
+        </tr>
+    </table>
+
+</body>
+
+</html>
